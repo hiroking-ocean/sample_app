@@ -24,7 +24,10 @@ guard :minitest do
   watch('app/views/layouts/application.html.erb') do
     'test/integration/site_layout_test.rb'
   end
-  watch(%r{^app/views/layouts/_(.*)\.html\.erb$})
+  watch(%r{^app/controllers/.*_controller\.rb$})
+  watch(%r{^app/views/.*/.*\.html\.erb$})
+  watch(%r{^app/helpers/.*_helper\.rb})
+  watch('config/routes.rb')
 
   
   # with Minitest::Spec
